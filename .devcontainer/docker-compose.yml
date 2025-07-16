@@ -1,17 +1,17 @@
 version: '2'
 services:
   dev:
-    image: "dev:zephyr"
+    image: "zephyr-ubit:v4.1.0"
     build:
       context: "."
       dockerfile: ./dev/Dockerfile
       args:
-        # Update 'VARIANT' to pick a Python version: 3, 3.12
-        VARIANT: "3.12"
+        # Update 'VARIANT' to pick a Python version: 3, 3.12, 3.13
+        VARIANT: "3.13"
         # Update 'CMAKE_VERSION' to pick a specific version of CMake: 3.20.5, 3.21.1, 4.0.3
-        CMAKE_VERSION: "3.20.5"
-        # Update 'MANIFEST_REVISION' to pick a specific version of Zephyr: main, v4.1.0, v4.0.0
-        MANIFEST_REVISION: "main"
+        CMAKE_VERSION: "4.0.3"
+        # Update 'MANIFEST_REVISION' to pick a specific version of Zephyr: main, v4.0.0, v4.1.0
+        MANIFEST_REVISION: "v4.1.0"
     volumes:
       - ..:/home/vscode/zephyr/dev/zephyrproject:cached
       - ./dev/.vscode:/home/vscode/zephyr/dev/.vscode:cached
