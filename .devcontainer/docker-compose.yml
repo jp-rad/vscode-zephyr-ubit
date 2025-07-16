@@ -1,17 +1,23 @@
 version: '2'
 services:
   dev:
-    image: "dev:python3"
+    image: "zephyr-ubit:v4.1.0"
     build:
       context: "."
       dockerfile: ./dev/Dockerfile
       args:
-        # Update 'VARIANT' to pick a Python version: 3, 3.10, 3.11, 3.12
-        # Available image variants: https://github.com/microsoft/vscode-dev-containers/blob/main/containers/python-3/README.md
-        VARIANT: "3"
+        # Update 'VARIANT' to pick a Python version: 3, 3.12, 3.13
+        VARIANT: "3.13"
+        # Update 'CMAKE_VERSION' to pick a specific version of CMake: 3.20.5, 3.21.1, 4.0.3
+        CMAKE_VERSION: "4.0.3"
+        # Update 'MANIFEST_REVISION' to pick a specific version of Zephyr: main, v4.0.0, v4.1.0
+        MANIFEST_REVISION: "v4.1.0"
     volumes:
-      - ..:/home/vscode/dev/code:cached
-      - ./dev/.vscode:/home/vscode/dev/.vscode:cached
+      - ..:/home/vscode/zephyr/dev/zephyrproject:cached
+      - ./dev/.vscode:/home/vscode/zephyr/dev/.vscode:cached
+      - /dev/bus/usb:/dev/bus/usb
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    privileged: true
     tty: true
     command: bash
-
