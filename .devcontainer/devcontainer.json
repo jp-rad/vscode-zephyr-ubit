@@ -16,48 +16,17 @@
 	"service": "dev",
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/home/vscode/dev",
+	"workspaceFolder": "/home/vscode/zephyr/dev",
 	"customizations": {
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
 			"settings": {
-				// Environments - https://code.visualstudio.com/docs/languages/python?source=post_page---------------------------#_environments
-				"python.pythonPath": "/usr/local/bin/python",
-				// Code analysis settings - https://code.visualstudio.com/docs/python/settings-reference#_code-analysis-settings
-				"python.analysis.autoSearchPaths": false,
-				// "python.analysis.extraPaths": [],
-				"python.analysis.diagnosticMode": "openFilesOnly",
-				// Formatting - https://code.visualstudio.com/docs/python/editing#_formatting
-				"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
-				"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
-				"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
-				"python.formatting.provider": "autopep8",
-				// Linting Python - https://code.visualstudio.com/docs/python/linting
-				"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
-				"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
-				"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
-				"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
-				"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
-				"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
-				"python.linting.enabled": true,
-				"python.linting.lintOnSave": true,
-				"python.linting.pylintEnabled": true,
-				// Add this auto-save option so the pylint will sow errors while editing otherwise
-				// it will only show the errors on file save
-				"files.autoSave": "afterDelay",
-				"files.autoSaveDelay": 500,
-				// The following will hide the compiled file in the editor/ add other file to hide them from editor
-				"files.exclude": {
-					"**/*.pyc": true
-				}
 			},
 			// Add the IDs of extensions you want installed when the container is created.
+			// - Developing with Zephyr » Tools and IDEs » Visual Studio Code
+			//   https://docs.zephyrproject.org/latest/develop/tools/vscode.html
 			"extensions": [
-				"ms-python.python",
-				"ms-python.vscode-pylance",
-				"tamasfe.even-better-toml",
-				"ms-python.black-formatter",
-				"ms-python.debugpy"
+				"ms-vscode.cpptools-extension-pack"
 			]
 		}
 	},

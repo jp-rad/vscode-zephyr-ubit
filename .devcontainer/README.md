@@ -1,4 +1,4 @@
-# vscode-zephyr-ubit
+# vscode-zephyr
 
 This repository provides a **setup guide for developing micro:bit v1/v2 applications using Zephyr RTOS in a Windows + WSL2 + Docker environment**. Flashing and debugging via CMSIS-DAP is also supported through `usbipd-win`.
 
@@ -18,9 +18,10 @@ This repository provides a **setup guide for developing micro:bit v1/v2 applicat
 
 Install the following tools on your Windows 11 system:
 
-- [Visual Studio Code](https://azure.microsoft.com/en-us/products/visual-studio-code)  
+- [Git](https://git-scm.com/)  
 - [Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/)  
 - [usbipd-win](https://learn.microsoft.com/en-us/windows/wsl/connect-usb)  
+- [Visual Studio Code](https://azure.microsoft.com/en-us/products/visual-studio-code)  
 
 Open this project in VS Code and connect to the container environment.
 

@@ -6,12 +6,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "debug - main.py",
-            "type": "debugpy",
+            "name": "(GDB) micro:bit",
+            "type": "cppdbg",
             "request": "launch",
-            "cwd": "${workspaceFolder}/code/src",
-            "program": "main.py",
-            "console": "integratedTerminal"
+            "program": "${workspaceFolder}/zephyrproject/build/zephyr/zephyr.elf",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/zephyrproject",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "${env:ZEPHYR_SDK_DIR}/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+            "setupCommands": [
+                { "description": "Load ELF manually", "text": "file ${workspaceFolder}/zephyrproject/build/zephyr/zephyr.elf" },
+                { "description": "Connect to GDB server", "text": "target remote :3333" },
+                { "description": "Reset and halt", "text": "monitor reset halt" },
+                { "description": "Load program", "text": "load" }
+            ],
+            "debugServerPath": "${workspaceFolder}/scripts/microbit-toolchain.sh",
+            "debugServerArgs": "debugserver auto ${workspaceFolder}/zephyrproject",
+            "preLaunchTask": "(internal) build",
         },
     ]
 }
